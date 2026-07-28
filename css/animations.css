@@ -1,0 +1,382 @@
+/*
+    Main entrance
+*/
+
+.welcome-content {
+    animation:
+        welcomeAppear 1.8s ease-out forwards;
+}
+
+@keyframes welcomeAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/*
+    Left photograph
+*/
+
+.photo-left {
+    animation:
+        photoLeftEntrance 1.5s cubic-bezier(0.22, 1, 0.36, 1)
+        0.2s both;
+}
+
+@keyframes photoLeftEntrance {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateX(-120px)
+            rotate(-25deg)
+            scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateX(-210px)
+            rotate(-8deg)
+            scale(1);
+    }
+}
+
+
+/*
+    Right photograph
+*/
+
+.photo-right {
+    animation:
+        photoRightEntrance 1.5s cubic-bezier(0.22, 1, 0.36, 1)
+        0.45s both;
+}
+
+@keyframes photoRightEntrance {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateX(120px)
+            rotate(25deg)
+            scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateX(210px)
+            rotate(8deg)
+            scale(1);
+    }
+}
+
+
+/*
+    Floating hearts
+*/
+
+.floating-hearts span:nth-child(1) {
+    left: 10%;
+    animation: floatHeart 9s linear infinite;
+}
+
+.floating-hearts span:nth-child(2) {
+    left: 25%;
+    animation: floatHeart 12s linear infinite 2s;
+}
+
+.floating-hearts span:nth-child(3) {
+    left: 40%;
+    animation: floatHeart 10s linear infinite 4s;
+}
+
+.floating-hearts span:nth-child(4) {
+    left: 55%;
+    animation: floatHeart 14s linear infinite 1s;
+}
+
+.floating-hearts span:nth-child(5) {
+    left: 70%;
+    animation: floatHeart 11s linear infinite 3s;
+}
+
+.floating-hearts span:nth-child(6) {
+    left: 82%;
+    animation: floatHeart 13s linear infinite 5s;
+}
+
+.floating-hearts span:nth-child(7) {
+    left: 92%;
+    animation: floatHeart 10s linear infinite 6s;
+}
+
+@keyframes floatHeart {
+
+    0% {
+        transform:
+            translateY(0)
+            rotate(0deg)
+            scale(0.8);
+
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 0.15;
+    }
+
+    50% {
+        transform:
+            translateY(-50vh)
+            rotate(15deg)
+            scale(1);
+    }
+
+    85% {
+        opacity: 0.12;
+    }
+
+    100% {
+        transform:
+            translateY(-110vh)
+            rotate(-15deg)
+            scale(0.7);
+
+        opacity: 0;
+    }
+}
+
+
+/*
+    Screen transition
+*/
+
+.welcome-screen.fade-out {
+    animation: screenFadeOut 1s ease forwards;
+}
+
+@keyframes screenFadeOut {
+
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+/*
+    Personal words animations
+*/
+
+.word-abashito {
+    animation:
+        abashitoEntrance 1.5s ease-out 1s both,
+        abashitoFloat 5s ease-in-out 2.5s infinite;
+}
+
+@keyframes abashitoEntrance {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateX(-40px)
+            rotate(-12deg);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateX(0)
+            rotate(-6deg);
+    }
+}
+
+@keyframes abashitoFloat {
+
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            rotate(-6deg);
+    }
+
+    50% {
+        transform:
+            translateY(-10px)
+            rotate(-3deg);
+    }
+}
+
+
+.word-beshito {
+    animation:
+        beshitoEntrance 1.5s ease-out 1.4s both,
+        beshitoFloat 6s ease-in-out 3s infinite;
+}
+
+@keyframes beshitoEntrance {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateX(40px)
+            rotate(12deg);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateX(0)
+            rotate(6deg);
+    }
+}
+
+@keyframes beshitoFloat {
+
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            rotate(6deg);
+    }
+
+    50% {
+        transform:
+            translateY(-12px)
+            rotate(3deg);
+    }
+}
+
+/* ==========================================
+   BUTTON HEART BURST
+========================================== */
+
+.click-heart {
+    position: fixed;
+
+    z-index: 9999;
+
+    pointer-events: none;
+
+    font-size: 1.4rem;
+
+    animation: heartBurst 1s ease-out forwards;
+}
+
+
+@keyframes heartBurst {
+
+    0% {
+        opacity: 1;
+
+        transform:
+            translate(-50%, -50%)
+            scale(0.5);
+    }
+
+    60% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translate(
+                calc(-50% + var(--x)),
+                calc(-50% + var(--y))
+            )
+            scale(1.2)
+            rotate(20deg);
+    }
+}
+
+/* ==========================================
+   MOMENTS ELEMENTS ENTRANCE
+========================================== */
+
+.moments-section.visible .moments-small-text {
+    animation:
+        momentsFadeUp 0.8s ease-out 0.1s both;
+}
+
+.moments-section.visible h2 {
+    animation:
+        momentsFadeUp 0.9s ease-out 0.25s both;
+}
+
+.moments-section.visible .moments-description {
+    animation:
+        momentsFadeUp 0.9s ease-out 0.4s both;
+}
+
+.moments-section.visible .moments-viewer {
+    animation:
+        momentsPhotoEntrance 1s ease-out 0.55s both;
+}
+
+.moments-section.visible .memory-thumbnails {
+    animation:
+        momentsFadeUp 0.8s ease-out 0.75s both;
+}
+
+.moments-section.visible .moment-caption {
+    animation:
+        momentsFadeUp 0.8s ease-out 0.9s both;
+}
+
+
+@keyframes momentsFadeUp {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes momentsPhotoEntrance {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(40px)
+            scale(0.92);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}

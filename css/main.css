@@ -1,0 +1,597 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+
+    color: #f8eee4;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    background: #211612;
+}
+
+.welcome-screen {
+    position: relative;
+
+    width: 100%;
+    height: 100dvh;
+    min-height: 650px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    /*
+        Warm brown gradient
+    */
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            #8b634c 0%,
+            #654331 35%,
+            #3d281f 68%,
+            #211612 100%
+        );
+}
+
+/*
+    Subtle light in the center
+*/
+.welcome-screen::before {
+    content: "";
+
+    position: absolute;
+
+    width: 700px;
+    height: 700px;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background: rgba(255, 220, 190, 0.08);
+
+    filter: blur(80px);
+
+    pointer-events: none;
+}
+
+
+/*
+    Main content
+*/
+.welcome-content {
+    position: relative;
+
+    z-index: 10;
+
+    width: min(90%, 900px);
+
+    text-align: center;
+}
+
+
+/*
+    Photos
+*/
+.photo-gallery {
+    position: relative;
+
+    width: 100%;
+    height: 250px;
+
+    margin-bottom: 25px;
+}
+
+.memory-photo {
+    position: absolute;
+
+    width: 180px;
+    height: 220px;
+
+    padding: 8px;
+
+    background: #f5eadc;
+
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.3),
+        0 5px 15px rgba(0, 0, 0, 0.2);
+
+    overflow: hidden;
+}
+
+.memory-photo img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    filter: sepia(10%) saturate(85%);
+
+    transition:
+        transform 0.6s ease,
+        filter 0.6s ease;
+}
+
+.memory-photo:hover img {
+    transform: scale(1.05);
+
+    filter: sepia(0%) saturate(100%);
+}
+
+.photo-left {
+    left: 50%;
+
+    transform:
+        translateX(-210px)
+        rotate(-8deg);
+}
+
+.photo-right {
+    right: 50%;
+
+    transform:
+        translateX(210px)
+        rotate(8deg);
+}
+
+
+/*
+    Text
+*/
+.welcome-small-text {
+    margin-bottom: 15px;
+
+    font-size: 0.9rem;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+    color: #ead6c4;
+
+    opacity: 0.8;
+}
+
+.welcome-content h1 {
+    margin-bottom: 20px;
+
+    font-size: clamp(3.5rem, 8vw, 6rem);
+
+    font-weight: 400;
+
+    line-height: 1.05;
+
+    color: #fff8f0;
+
+    text-shadow:
+        0 5px 25px rgba(0, 0, 0, 0.25);
+}
+
+.welcome-content h1 span {
+    display: inline-block;
+
+    margin-left: 8px;
+
+    font-size: 0.5em;
+}
+
+.welcome-description {
+    max-width: 500px;
+
+    margin: 0 auto 35px;
+
+    font-size: 1.1rem;
+
+    line-height: 1.8;
+
+    color: #ead7c6;
+
+    opacity: 0.9;
+}
+
+
+/*
+    Button
+*/
+.start-button {
+    position: relative;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 15px 30px;
+
+    border: 1px solid rgba(255, 240, 225, 0.4);
+
+    border-radius: 50px;
+
+    background: rgba(255, 240, 225, 0.1);
+
+    color: #fff8f0;
+
+    font-family: inherit;
+
+    font-size: 1rem;
+
+    cursor: pointer;
+
+    backdrop-filter: blur(10px);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.start-button:hover {
+    transform: translateY(-4px);
+
+    background: rgba(255, 240, 225, 0.18);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.25),
+        0 0 30px rgba(255, 220, 190, 0.15);
+}
+
+.start-button:active {
+    transform: scale(0.97);
+}
+
+.button-heart {
+    font-size: 1.4rem;
+
+    transition: transform 0.3s ease;
+}
+
+.start-button:hover .button-heart {
+    transform: scale(1.3);
+}
+
+
+/*
+    Floating hearts
+*/
+.floating-hearts {
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+}
+
+.floating-hearts span {
+    position: absolute;
+
+    bottom: -50px;
+
+    font-size: 2rem;
+
+    color: #f2d4bd;
+
+    opacity: 0.12;
+}
+
+/* 
+    Personal words
+*/
+
+.special-word {
+    position: absolute;
+
+    z-index: 20;
+
+    color: #ffffff;
+
+    font-size: 1.4rem;
+
+    font-style: italic;
+
+    letter-spacing: 2px;
+
+    text-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.35);
+
+    pointer-events: none;
+}
+
+.word-abashito {
+    top: 5%;
+    left: 10%;
+}
+
+.word-beshito {
+    right: 8%;
+    bottom: 5%;
+}
+
+/* ==========================================
+   OUR LITTLE MOMENTS
+========================================== */
+
+.moments-section {
+    position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 100px 20px;
+
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            #76523e 0%,
+            #513728 45%,
+            #302019 100%
+        );
+
+    color: #fff8f0;
+}
+
+.moments-content {
+    width: min(100%, 900px);
+
+    text-align: center;
+}
+
+
+/* Header */
+
+.moments-small-text {
+    margin-bottom: 15px;
+
+    font-size: 0.8rem;
+
+    text-transform: uppercase;
+
+    letter-spacing: 4px;
+
+    color: #e6cdb9;
+
+    opacity: 0.8;
+}
+
+.moments-content h2 {
+    margin-bottom: 20px;
+
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+
+    font-weight: 400;
+}
+
+.moments-content h2 span {
+    font-size: 0.6em;
+}
+
+.moments-description {
+    max-width: 550px;
+
+    margin: 0 auto 50px;
+
+    color: #dfc8b6;
+
+    font-size: 1.05rem;
+
+    line-height: 1.8;
+}
+
+
+/* Main viewer */
+
+.moments-viewer {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 25px;
+
+    width: 100%;
+}
+
+.main-memory {
+    position: relative;
+
+    width: min(65vw, 500px);
+    height: min(65vh, 600px);
+
+    padding: 10px;
+
+    background: #f4e9dd;
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.35);
+}
+
+.main-memory img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        opacity 0.35s ease,
+        transform 0.35s ease;
+}
+
+
+/* Image number */
+
+.memory-overlay {
+    position: absolute;
+
+    bottom: 20px;
+    right: 20px;
+
+    display: flex;
+
+    gap: 5px;
+
+    padding: 7px 12px;
+
+    border-radius: 20px;
+
+    background: rgba(30, 18, 12, 0.7);
+
+    backdrop-filter: blur(8px);
+
+    font-size: 0.8rem;
+
+    letter-spacing: 2px;
+}
+
+
+/* Arrows */
+
+.gallery-arrow {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    color: white;
+
+    font-size: 1.5rem;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.gallery-arrow:hover {
+    transform: scale(1.1);
+
+    background: rgba(255, 255, 255, 0.18);
+}
+
+
+/* Thumbnails */
+
+.memory-thumbnails {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-top: 30px;
+}
+
+.thumbnail {
+    width: 70px;
+    height: 70px;
+
+    padding: 3px;
+
+    border: 2px solid transparent;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    opacity: 0.55;
+
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.thumbnail img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+.thumbnail:hover {
+    transform: translateY(-5px);
+
+    opacity: 0.9;
+}
+
+.thumbnail.active {
+    border-color: #f4dfcc;
+
+    opacity: 1;
+
+    transform: translateY(-5px);
+}
+
+
+/* Caption */
+
+.moment-caption {
+    margin-top: 30px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 1rem;
+
+    font-style: italic;
+
+    color: #e8d3c1;
+}
+
+/* ==========================================
+   MOMENTS ENTRANCE
+========================================== */
+
+.moments-content {
+    opacity: 0;
+
+    transform: translateY(50px);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+.moments-section.visible .moments-content {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+.moments-section {
+    scroll-margin-top: 0;
+}

@@ -1,81 +1,202 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Mi página</title>
+    <title>HBD langga! ❤️</title>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f5f5f5;
-            color: #222;
-            text-align: center;
-        }
-
-        header {
-            background: #222;
-            color: white;
-            padding: 40px 20px;
-        }
-
-        main {
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 20px;
-        }
-
-        .tarjeta {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-        }
-
-        button {
-            padding: 12px 20px;
-            border: none;
-            border-radius: 8px;
-            background: #222;
-            color: white;
-            cursor: pointer;
-        }
-
-        button:hover {
-            transform: scale(1.05);
-        }
-    </style>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 
 <body>
 
-    <header>
-        <h1>¡Hola mundo!</h1>
-        <p>Mi primera página web</p>
-    </header>
-
     <main>
-        <div class="tarjeta">
-            <h2>Bienvenido</h2>
 
-            <p>
-                Esta página está alojada gratuitamente
-                con GitHub Pages.
-            </p>
+        <!-- ==========================================
+             WELCOME SCREEN
+        =========================================== -->
 
-            <button onclick="saludar()">
-                Haz clic
-            </button>
-        </div>
+        <section class="welcome-screen" id="welcome-screen">
+
+            <!-- Background decoration -->
+            <div class="floating-hearts" aria-hidden="true">
+                <span>♡</span>
+                <span>♡</span>
+                <span>♥</span>
+                <span>💕</span>
+                <span>💗</span>
+                <span>🫶</span>
+                <span>❤️</span>
+            </div>
+
+            <section class="welcome-content">
+
+                <div class="special-word word-abashito">
+                    abachito
+                </div>
+
+                <div class="special-word word-beshito">
+                    beshito
+                </div>
+
+                <div class="photo-gallery">
+
+                    <div class="memory-photo photo-left">
+                        <img
+                            src="assets/images/pic-landing-page-1.jpeg"
+                            alt="A beautiful memory"
+                        >
+                    </div>
+
+                    <div class="memory-photo photo-right">
+                        <img
+                            src="assets/images/pic-landing-page-2.jpeg"
+                            alt="Another beautiful memory"
+                        >
+                    </div>
+
+                </div>
+
+                <p class="welcome-small-text">
+                    I love you more and there is no discussion about it 🥰
+                </p>
+
+                <h1>
+                    Happy Birthday Love
+                    <span>❤️</span>
+                </h1>
+
+                <p class="welcome-description">
+                    Another birthday together 💕
+                </p>
+
+                <button class="start-button" id="start-button">
+                    <span>Begin Our Story</span>
+                    <span class="button-heart">♡</span>
+                </button>
+
+            </section>
+
+        </section>
+
+
+        <!-- ==========================================
+             OUR LITTLE MOMENTS
+        =========================================== -->
+
+        <section class="moments-section" id="moments">
+
+            <div class="moments-content">
+
+                <p class="moments-small-text">
+                    The little things matter the most
+                </p>
+
+                <h2>
+                    Our Little Moments
+                    <span>❤️</span>
+                </h2>
+
+                <p class="moments-description">
+                    A collection of the little moments that
+                    became some of my favorite memories with you.
+                </p>
+
+
+                <!-- Main image -->
+                <div class="moments-viewer">
+
+                    <button
+                        class="gallery-arrow gallery-arrow-left"
+                        id="previous-photo"
+                        aria-label="Previous memory"
+                    >
+                        ←
+                    </button>
+
+                    <div class="main-memory">
+                        <img
+                            id="main-memory-image"
+                            src="assets/images/moment-1.jpeg"
+                            alt="Our memory"
+                        >
+
+                        <div class="memory-overlay">
+                            <span id="memory-number">01</span>
+                            <span>/</span>
+                            <span id="memory-total">05</span>
+                        </div>
+                    </div>
+
+                    <button
+                        class="gallery-arrow gallery-arrow-right"
+                        id="next-photo"
+                        aria-label="Next memory"
+                    >
+                        →
+                    </button>
+
+                </div>
+
+
+                <!-- Thumbnails -->
+                <div class="memory-thumbnails" id="memory-thumbnails">
+
+                    <button class="thumbnail active">
+                        <img
+                            src="assets/images/moment-1.jpeg"
+                            alt="Memory 1"
+                        >
+                    </button>
+
+                    <button class="thumbnail">
+                        <img
+                            src="assets/images/moment-2.jpeg"
+                            alt="Memory 2"
+                        >
+                    </button>
+
+                    <button class="thumbnail">
+                        <img
+                            src="assets/images/moment-3.jpeg"
+                            alt="Memory 3"
+                        >
+                    </button>
+
+                    <button class="thumbnail">
+                        <img
+                            src="assets/images/moment-4.jpeg"
+                            alt="Memory 4"
+                        >
+                    </button>
+
+                    <button class="thumbnail">
+                        <img
+                            src="assets/images/moment-5.jpeg"
+                            alt="Memory 5"
+                        >
+                    </button>
+
+                </div>
+
+
+                <p class="moment-caption" id="moment-caption">
+                    One of those moments I wish I could relive forever. ❤️
+                </p>
+
+            </div>
+
+        </section>
+
     </main>
 
-    <script>
-        function saludar() {
-            alert("¡Hola! 👋");
-        }
-    </script>
+
+    <script src="js/main.js"></script>
+    <script src="js/effects.js"></script>
+    <script src="js/carousel.js"></script>
 
 </body>
 </html>
