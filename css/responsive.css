@@ -132,3 +132,275 @@
         font-size: 0.9rem;
     }
 }
+
+/* ==========================================
+   ADVENTURES - MOBILE
+========================================== */
+
+@media (max-width: 600px) {
+
+    .adventures-section {
+
+        min-height: 100dvh;
+
+        padding: 70px 10px;
+
+    }
+
+
+    .adventures-small-text {
+
+        font-size: 0.65rem;
+
+        letter-spacing: 2px;
+
+    }
+
+
+    .adventures-content h2 {
+
+        font-size: 2.8rem;
+
+    }
+
+
+    .adventures-description {
+
+        max-width: 320px;
+
+        margin-bottom: 35px;
+
+        padding: 0 15px;
+
+        font-size: 0.9rem;
+
+    }
+
+
+    .adventure-carousel {
+
+        gap: 5px;
+
+    }
+
+
+    .adventure-track-container {
+
+        width: calc(100vw - 100px);
+
+        height: 500px;
+
+    }
+
+
+    .adventure-card.previous {
+
+        transform:
+            translateX(-105%)
+            scale(0.75);
+
+        opacity: 0;
+
+    }
+
+
+    .adventure-card.next {
+
+        transform:
+            translateX(5%)
+            scale(0.75);
+
+        opacity: 0;
+
+    }
+
+
+    .adventure-arrow {
+
+        width: 40px;
+
+        height: 40px;
+
+        font-size: 1.1rem;
+
+    }
+
+
+    .adventure-card-back {
+
+        padding: 30px 20px;
+
+    }
+
+
+    .adventure-card-back h3 {
+
+        font-size: 1.6rem;
+
+    }
+
+
+    .adventure-card-back p {
+
+        font-size: 0.9rem;
+
+    }
+
+
+    .adventure-hint {
+
+        font-size: 0.65rem;
+
+    }
+
+}
+
+/* ==========================================
+   OUR STORY - MOBILE
+========================================== */
+
+@media (max-width: 600px) {
+
+    .story-section {
+
+        padding:
+            90px
+            15px
+            110px;
+
+    }
+
+
+    .story-header h2 {
+
+        font-size: 2.8rem;
+
+    }
+
+
+    .story-intro {
+
+        max-width: 320px;
+
+        font-size: 0.9rem;
+
+    }
+
+
+    .story-music {
+
+        margin-bottom: 70px;
+
+    }
+
+
+    /* Move timeline to left */
+
+    .story-timeline::before {
+
+        left: 20px;
+
+        transform: none;
+
+    }
+
+
+    .story-item,
+    .story-left,
+    .story-right {
+
+        width: 100%;
+
+        margin-left: 0;
+
+        padding-left: 60px;
+
+        padding-right: 0;
+
+    }
+
+
+    .story-left,
+    .story-right {
+
+        transform:
+            translateX(35px);
+
+    }
+
+
+    .story-item.revealed {
+
+        transform:
+            translateX(0);
+
+    }
+
+
+    .story-left .story-marker,
+    .story-right .story-marker {
+
+        left: -4px;
+
+        right: auto;
+
+        width: 48px;
+
+        height: 48px;
+
+    }
+
+
+    .story-photo {
+
+        height: 240px;
+
+    }
+
+
+    .story-text {
+
+        padding: 25px 20px;
+
+    }
+
+
+    .story-text h3 {
+
+        font-size: 1.4rem;
+
+    }
+
+
+    .story-text p {
+
+        font-size: 0.85rem;
+
+    }
+
+
+    .story-item {
+
+        margin-bottom: 75px;
+
+    }
+    
+}
+
+.welcome-screen,
+.moments-section,
+.adventures-section {
+    min-height: 100vh;
+}
+
+@media (max-width: 600px) {
+
+    .story-ending {
+        padding-left: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+
+}

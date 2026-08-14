@@ -380,3 +380,278 @@
             scale(1);
     }
 }
+
+/* ==========================================
+   ADVENTURES ENTRANCE
+========================================== */
+
+.adventures-content {
+
+    opacity: 0;
+
+    transform: translateY(50px);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+
+}
+
+
+.adventures-section.visible
+.adventures-content {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+}
+
+
+.adventures-section.visible
+.adventures-small-text {
+
+    animation:
+        adventureFadeUp
+        0.8s
+        ease-out
+        0.1s
+        both;
+
+}
+
+
+.adventures-section.visible
+.adventures-content h2 {
+
+    animation:
+        adventureFadeUp
+        0.9s
+        ease-out
+        0.25s
+        both;
+
+}
+
+
+.adventures-section.visible
+.adventures-description {
+
+    animation:
+        adventureFadeUp
+        0.9s
+        ease-out
+        0.4s
+        both;
+
+}
+
+
+.adventures-section.visible
+.adventure-carousel {
+
+    animation:
+        adventureCarouselEntrance
+        1s
+        ease-out
+        0.55s
+        both;
+
+}
+
+
+.adventures-section.visible
+.adventure-progress {
+
+    animation:
+        adventureFadeUp
+        0.8s
+        ease-out
+        0.75s
+        both;
+
+}
+
+
+.adventures-section.visible
+.adventure-dots {
+
+    animation:
+        adventureFadeUp
+        0.8s
+        ease-out
+        0.9s
+        both;
+
+}
+
+
+@keyframes adventureFadeUp {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(25px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+@keyframes adventureCarouselEntrance {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(50px)
+            scale(0.9);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+/* ==========================================
+   OUR STORY ENTRANCE
+========================================== */
+
+.story-section .story-header {
+
+    opacity: 0;
+
+    transform: translateY(35px);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+
+}
+
+
+.story-section.visible .story-header {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+}
+
+
+/* ==========================================
+   MUSIC ENTRANCE
+========================================== */
+
+.story-section.visible .story-music {
+
+    animation:
+        storyMusicEntrance
+        1s
+        ease-out
+        0.4s
+        both;
+
+}
+
+
+@keyframes storyMusicEntrance {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(25px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+/* ==========================================
+   TIMELINE DELAY
+========================================== */
+
+.story-item:nth-child(1).revealed {
+
+    transition-delay: 0.1s;
+
+}
+
+
+.story-item:nth-child(2).revealed {
+
+    transition-delay: 0.2s;
+
+}
+
+
+.story-item:nth-child(3).revealed {
+
+    transition-delay: 0.2s;
+
+}
+
+
+.story-item:nth-child(4).revealed {
+
+    transition-delay: 0.2s;
+
+}
+
+
+/* ==========================================
+   STORY ENDING
+========================================== */
+
+.story-ending {
+
+    opacity: 0;
+
+    transform:
+        translateY(30px);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+
+}
+
+
+.story-ending.visible {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+}

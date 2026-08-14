@@ -5,11 +5,11 @@ const memories = [
     },
     {
         image: "assets/images/moment-2.jpeg",
-        caption: "Our first anniversary together. 🥰"
+        caption: "Beach time 🏖️"
     },
     {
         image: "assets/images/moment-3.jpeg",
-        caption: "A trip to never forget. ✈️"
+        caption: "I really love to spend time with you, every single moment with you feels just right!"
     },
     {
         image: "assets/images/moment-4.jpeg",
