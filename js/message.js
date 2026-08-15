@@ -3,8 +3,9 @@
 ========================================== */
 
 
-const messageSection =
-    document.getElementById("little-message");
+/* ==========================================
+   ELEMENTS
+========================================== */
 
 const letterEnvelope =
     document.getElementById("letter-envelope");
@@ -18,137 +19,88 @@ const loveLetter =
 const messageNext =
     document.getElementById("message-next");
 
-const finalButton =
-    document.getElementById("go-to-final");
-
-
-/* ==========================================
-   SECTION ENTRANCE
-========================================== */
-
-if (messageSection) {
-
-    const messageObserver =
-        new IntersectionObserver(
-
-            (entries) => {
-
-                entries.forEach(
-                    (entry) => {
-
-                        if (
-                            entry.isIntersecting
-                        ) {
-
-                            entry.target.classList.add(
-                                "visible"
-                            );
-
-                        }
-
-                    }
-                );
-
-            },
-
-            {
-                threshold: 0.15
-            }
-
-        );
-
-
-    messageObserver.observe(
-        messageSection
-    );
-
-}
-
 
 /* ==========================================
    OPEN LETTER
 ========================================== */
 
+function openLetter() {
+
+    if (!letterEnvelope || !loveLetter) {
+        return;
+    }
+
+    /* Prevent opening multiple times */
+
+    if (letterEnvelope.classList.contains("open")) {
+        return;
+    }
+
+    /* Open envelope */
+
+    letterEnvelope.classList.add("open");
+
+
+    /* Update button */
+
+    if (openLetterButton) {
+
+        const buttonText =
+            openLetterButton.querySelector("span");
+
+        if (buttonText) {
+
+            buttonText.textContent =
+                "My Letter ❤️";
+
+        }
+
+    }
+
+
+    /* Show letter */
+
+    setTimeout(() => {
+
+        loveLetter.classList.add("visible");
+
+    }, 700);
+
+
+    /* Show continue */
+
+    if (messageNext) {
+
+        setTimeout(() => {
+
+            messageNext.classList.add("visible");
+
+        }, 1700);
+
+    }
+
+}
+
+
+/* Button */
+
 if (openLetterButton) {
 
     openLetterButton.addEventListener(
         "click",
-        () => {
-
-            if (!letterEnvelope) {
-                return;
-            }
-
-
-            letterEnvelope.classList.add(
-                "open"
-            );
-
-
-            openLetterButton.style.opacity =
-                "0";
-
-            openLetterButton.style.pointerEvents =
-                "none";
-
-
-            setTimeout(() => {
-
-                if (loveLetter) {
-
-                    loveLetter.classList.add(
-                        "visible"
-                    );
-
-                }
-
-            }, 650);
-
-
-            setTimeout(() => {
-
-                if (messageNext) {
-
-                    messageNext.classList.add(
-                        "visible"
-                    );
-
-                }
-
-            }, 1600);
-
-        }
+        openLetter
     );
 
 }
 
 
-/* ==========================================
-   FINAL BUTTON
-========================================== */
+/* Envelope */
 
-if (finalButton) {
+if (letterEnvelope) {
 
-    finalButton.addEventListener(
+    letterEnvelope.addEventListener(
         "click",
-        () => {
-
-            const finalSection =
-                document.getElementById(
-                    "final-message"
-                );
-
-
-            if (finalSection) {
-
-                finalSection.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start"
-                });
-
-            }
-
-        }
+        openLetter
     );
 
 }

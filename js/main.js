@@ -19,6 +19,9 @@ const adventuresSection =
 const storySection = 
     document.getElementById("our-story");
 
+const finalSection =
+    document.getElementById("final-section");
+
 const messageSection = 
     document.getElementById("little-message");
 
@@ -30,6 +33,9 @@ const storyButton =
 
 const messageButton = 
     document.getElementById("go-to-message");
+
+const finalButton =
+    document.getElementById("go-to-final");    
 
 
 /* ==========================================
@@ -150,6 +156,30 @@ if (messageButton) {
             }
 
             messageSection.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+
+        }
+    );
+
+}
+
+/* ==========================================
+   FINAL SECTION BUTTON
+========================================== */
+
+if (finalButton) {
+
+    finalButton.addEventListener(
+        "click",
+        () => {
+
+            if (!finalSection) {
+                return;
+            }
+
+            finalSection.scrollIntoView({
                 behavior: "smooth",
                 block: "start"
             });
@@ -752,5 +782,38 @@ if (adventuresSection) {
     adventuresObserver.observe(
         adventuresSection
     );
+
+}
+
+/* ==========================================
+   MESSAGE OBSERVER
+========================================== */
+
+if (messageSection) {
+
+    const messageObserver =
+        new IntersectionObserver(
+
+            (entries) => {
+
+                entries.forEach((entry) => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add("visible");
+
+                    }
+
+                });
+
+            },
+
+            {
+                threshold: 0.2
+            }
+
+        );
+
+    messageObserver.observe(messageSection);
 
 }
